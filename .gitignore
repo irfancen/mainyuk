@@ -1,4 +1,5 @@
 # files
+.idea
 .vscode
 .env
 .env.local
