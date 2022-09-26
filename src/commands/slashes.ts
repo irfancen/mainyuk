@@ -16,11 +16,14 @@ export class SlashExample {
     });
 
     const pages = commands.map((cmd, i) => {
-      const embed = new EmbedBuilder()
+      const embed = new EmbedBuilder({
+        fields: [
+          { name: "Name", value: cmd.name },
+          { name: "Description", value: cmd.description },
+        ],
+      })
         .setFooter({ text: `Page ${i + 1} of ${commands.length}` })
-        .setTitle("**Slash command info**")
-        .addFields({ name: "Name", value: cmd.name })
-        .addFields({ name: "Description", value: cmd.description });
+        .setTitle("**Slash command info**");
 
       return { embeds: [embed] };
     });
