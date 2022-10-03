@@ -10,9 +10,4 @@ export class GlobalCommands {
   ping(interaction: CommandInteraction): void {
     interaction.reply(`Pong! 🏓 | ${Math.abs(Date.now() - interaction.createdTimestamp)}ms.`);
   }
-
-  @Slash({ name: "hello", description: "Greets the bot." })
-  hello(interaction: CommandInteraction): void {
-    interaction.reply(`Hi ${interaction.member}! Let's have some fun together! 😄`);
-  }
 }
